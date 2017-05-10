@@ -25,7 +25,7 @@ def index(request):
 	index = content.number
 	max_index = len(paginator.page_range)
 	start_index = max_index - 7 if index >= max_index - 5 else index - 1 if index != 1 else 1
-	end_index = max_index if index >= max_index - 6 else index + 7 if index != 1 else index + 8
+	end_index = max_index + 1 if index >= max_index - 6 else index + 7 if index != 1 else index + 8
 	page_range = range(start_index, end_index)
 
 	html = template.render(locals())
