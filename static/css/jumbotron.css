@@ -26,7 +26,7 @@
     background: white;
   }
   .navbar {
-    padding: 0px 16px;
+    padding: 8px 16px;
     background-color: white;
     box-shadow: 0 0 5px #000;
     font-family: 'Noto Sans TC', sans-serif;    
@@ -65,10 +65,9 @@
   .search-wrapper {
     position: relative;
     background-color: rgba(29, 49, 70, 0.7);
-    padding: 0px 30px 15px;
+    padding: 0px 15px 15px;
     border-radius: 3px;
-    margin: 130px auto 0px;
-    width: 400px;
+    margin: 100px auto 0px;
   }
 
   .nav .nav-link {
