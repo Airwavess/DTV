@@ -32,7 +32,7 @@ window.onload = function() {
             "fields": "name,picture",
           },
           function(response) {
-            console.log(JSON.stringify(response));
+            document.getElementsByClassName('user-login')[0] = "<p>"+ response.name +"</p>"
           }
         );
       }
