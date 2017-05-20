@@ -118,4 +118,8 @@ def search_attrations(request):
 	html = template.render(locals())
 	return HttpResponse(html)
 
+def homepage(request):
+	template = get_template('junbotron.html')
+	html = template.render(locals())
+	return HttpResponse(html)
 
