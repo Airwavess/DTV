@@ -16,10 +16,10 @@
     padding: 50px 0 50px;
   }
   .slide-2 {
-    height: 600px;
+    height: 300px;
     background-image: url("../img/walk-in-forest.jpg");
     background-color: rgba(0, 0, 0, 0.3);
-    background-position: center -300px;
+    background-position: center -850px;
     background-repeat: no-repeat;
   }
   .slide {
@@ -30,7 +30,6 @@
     background-color: white;
     box-shadow: 0 0 5px #000;
     font-family: 'Noto Sans TC', sans-serif;    
-    max-width: 100%;
   }
   .navbar .nav-item {
     font-weight: 400;
@@ -112,7 +111,7 @@
     height: 400px;
     background-image: url("../img/walk-in-forest.jpg");
     background-color: rgba(0, 0, 0, 0.3);
-    background-position: center -700px;
+    background-position: center -750px;
     background-repeat: no-repeat;
   }
   .slide {
@@ -123,8 +122,6 @@
     background-color: white;
     box-shadow: 0 0 5px #000;
     font-family: 'Noto Sans TC', sans-serif;
-    max-width: 100%;
-    
   }
   .navbar .nav-item {
     font-weight: 400;
@@ -204,7 +201,7 @@
     height: 400px;
     background-image: url("../img/walk-in-forest.jpg");
     background-color: rgba(0, 0, 0, 0.3);
-    background-position: center -300px;
+    background-position: center -700px;
     background-repeat: no-repeat;
   }
   .slide {
@@ -292,7 +289,7 @@
     height: 400px;
     background-image: url("../img/walk-in-forest.jpg");
     background-color: rgba(0, 0, 0, 0.3);
-    background-position: center -300px;
+    background-position: center -650px;
     background-repeat: no-repeat;
   }
   .slide {
