@@ -1,1 +1,1 @@
-web: gunicorn cmc.wsgi --log-file -
+web: gunicorn dtv.wsgi --log-file -
