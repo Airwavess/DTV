@@ -32,7 +32,7 @@ window.onload = function() {
             "fields": "name,picture",
           },
           function(response) {
-            document.getElementsByClassName('user-login')[0] = "<p>"+ response.name +"</p>"
+            document.getElementsByClassName('user-login')[0].innerHTML = "<p>"+ response.name +"</p>"
           }
         );
       }
