@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  {% load staticfiles%}
+  <meta charset="utf-8"> {% load staticfiles%}
   <link rel="Shortcut Icon" type="image/x-icon" href="{% static 'img/favicon.ico'%}">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -46,38 +45,37 @@
   </nav>
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
-    <div class="col-lg-5 search-wrapper">
-      <div>
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">景點</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">美食</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">美食</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">美食</a>
-          </li>
-        </ul>
-      </div>
-      <div>
+    <div class="jumbotron-main">
+      <div class="col-lg-5 search-wrapper">
         <div>
-          <form action="/search_attrations/" method="POST">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search for..." required>
-              <span class="input-group-btn">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">景點</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">美食</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">美食</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">美食</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div>
+            <form action="/search_attrations/" method="POST">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." required>
+                <span class="input-group-btn">
                 <button class="btn btn-secondary" type="button">Go!</button>
               </span>
-            </div>
-          </form>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-      <!-- <h1 class="display-3">Fovago</h1>
-      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Go to &raquo;</a></p> -->
     </div>
   </div>
   <div class="slide">
@@ -135,16 +133,13 @@
     <!-- /container -->
   </div>
   <div class="slide-2">
-    <div >
-      
+    <div>
     </div>
   </div>
   <div class="footer">
     <div class="footer-col-share">
-      
     </div>
     <div class="footer-col">
-      
     </div>
   </div>
   <!-- Bootstrap core JavaScript
