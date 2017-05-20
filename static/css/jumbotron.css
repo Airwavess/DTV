@@ -1,17 +1,369 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
+
 @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+@media (max-width: 575px) {
+  .jumbotron {
+    background-image: url("../img/travel.jpg");
+    background-position: center -50px;
+    background-repeat: no-repeat;
+    padding: 0;
+  }
+  .jumbotron-main {
+    background-color: rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 50px 0 50px;
+  }
+  .slide-2 {
+    height: 600px;
+    background-image: url("../img/walk-in-forest.jpg");
+    background-color: rgba(0, 0, 0, 0.3);
+    background-position: center -300px;
+    background-repeat: no-repeat;
+  }
+  .slide {
+    background: white;
+  }
+  .navbar {
+    padding: 0px 16px;
+    background-color: white;
+    box-shadow: 0 0 5px #000;
+    font-family: 'Noto Sans TC', sans-serif;    
+    max-width: 100%;
+  }
+  .navbar .nav-item {
+    font-weight: 400;
+  }
+  .navbar .nav-link {
+    border-bottom: 2px solid white;
+    color: #5c85a7 !important;
+    transition: border-color 0.5s;
+    padding: 8px 15px !important;
+  }
+  .navbar .nav-link:hover {
+    border-color: #5c85a7;
+  }
+  .navbar .navbar-brand {
+    letter-spacing: 5px;
+    color: #5c85a7;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  .navbar .navbar-brand:hover {
+    color: #416079;
+  }
+  .btn-login {
+    background-color: white;
+    color: #5c85a7;
+    transition: border-color 0.5s;
+    border-radius: 0px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  .btn-login:hover {
+    border-bottom: 2px solid #5c85a7;
+  }
+  .search-wrapper {
+    position: relative;
+    background-color: rgba(29, 49, 70, 0.7);
+    padding: 0px 30px 15px;
+    border-radius: 3px;
+    margin: 130px auto 0px;
+    width: 400px;
+  }
 
-@media (min-width: 576px) {
-  ...
+  .nav .nav-link {
+    color: white;
+    padding-bottom: 10px;
+  }
+  .btn-secondary {
+    border-color: rgba(0, 0, 0, 0.15);
+    color: white;
+    background-color: #8db7d6;
+  }
+  .footer {
+    height: 300px;
+    background-color: #f9f9f9;
+  }
+  .footer-col-share {
+    height: 50px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+  }
 }
 
-@media (min-width: 768px) {
-  ...
+
+/*Small devices (landscape phones, 576px and up)*/
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .jumbotron {
+    background-image: url("../img/travel.jpg");
+    background-position: center -50px;
+    background-repeat: no-repeat;
+    padding: 0;
+  }
+  .jumbotron-main {
+    background-color: rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 80px 0 70px;
+  }
+  .slide-2 {
+    height: 400px;
+    background-image: url("../img/walk-in-forest.jpg");
+    background-color: rgba(0, 0, 0, 0.3);
+    background-position: center -700px;
+    background-repeat: no-repeat;
+  }
+  .slide {
+    background: white;
+  }
+  .navbar {
+    padding: 8px 16px;
+    background-color: white;
+    box-shadow: 0 0 5px #000;
+    font-family: 'Noto Sans TC', sans-serif;
+    max-width: 100%;
+    
+  }
+  .navbar .nav-item {
+    font-weight: 400;
+  }
+  .navbar-nav .nav-link {
+    border-bottom: 2px solid white;
+    color: #5c85a7 !important;
+    transition: color 0.3s;
+    padding: 8px 15px !important;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #416079 !important;
+  }
+  .navbar .navbar-brand {
+    letter-spacing: 5px;
+    color: #5c85a7;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  .navbar .navbar-brand:hover {
+    color: #416079;
+  }
+  .btn-login {
+    background-color: white;
+    color: #5c85a7;
+    transition: border-color 0.5s;
+    border-radius: 0px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  .btn-login:hover {
+    border-bottom: 2px solid #5c85a7;
+  }
+  .search-wrapper {
+    position: relative;
+    background-color: rgba(29, 49, 70, 0.7);
+    padding-bottom: 15px;
+    border-radius: 3px;
+    margin: 130px auto 0px;
+  }
+  .nav .nav-link {
+    color: white;
+    padding-bottom: 10px;
+  }
+  .btn-secondary {
+    border-color: rgba(0, 0, 0, 0.15);
+    color: white;
+    background-color: #8db7d6;
+  }
+  .footer {
+    height: 300px;
+    background-color: #f9f9f9;
+  }
+  .footer-col-share {
+    height: 50px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+  }
 }
 
-@media (min-width: 992px) {
 
+/*Medium devices (tablets, 768px and up)*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .jumbotron {
+    background-image: url("../img/travel.jpg");
+    background-position: center -50px;
+    background-repeat: no-repeat;
+    padding: 0;
+  }
+  .jumbotron-main {
+    background-color: rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 150px 0 100px;
+  }
+  .slide-2 {
+    height: 400px;
+    background-image: url("../img/walk-in-forest.jpg");
+    background-color: rgba(0, 0, 0, 0.3);
+    background-position: center -300px;
+    background-repeat: no-repeat;
+  }
+  .slide {
+    background: white;
+  }
+  .navbar {
+    padding: 8px 16px;
+    background-color: white;
+    box-shadow: 0 0 5px #000;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  .navbar .nav-item {
+    font-weight: 400;
+  }
+  .navbar-nav .nav-link {
+    border-bottom: 2px solid white;
+    color: #5c85a7 !important;
+    transition: color 0.3s;
+    padding: 8px 15px !important;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #416079 !important;
+  }
+  .navbar .navbar-brand {
+    letter-spacing: 5px;
+    color: #5c85a7;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  .navbar .navbar-brand:hover {
+    color: #416079;
+  }
+  .btn-login {
+    background-color: white;
+    color: #5c85a7;
+    transition: border-color 0.5s;
+    border-radius: 0px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  .btn-login:hover {
+    border-bottom: 2px solid #5c85a7;
+  }
+  .search-wrapper {
+    position: relative;
+    background-color: rgba(29, 49, 70, 0.7);
+    padding-bottom: 15px;
+    border-radius: 3px;
+    margin: 130px auto 0px;
+  }
+  .nav .nav-link {
+    color: white;
+    padding-bottom: 10px;
+  }
+  .btn-secondary {
+    border-color: rgba(0, 0, 0, 0.15);
+    color: white;
+    background-color: #8db7d6;
+  }
+  .footer {
+    height: 300px;
+    background-color: #f9f9f9;
+  }
+  .footer-col-share {
+    height: 50px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+  }
 }
+
+
+/*Large devices (desktops, 992px and up)*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .jumbotron {
+    background-image: url("../img/travel.jpg");
+    background-position: center -50px;
+    background-repeat: no-repeat;
+    padding: 0;
+  }
+  .jumbotron-main {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 0px;
+    padding: 80px 0 80px;
+  }
+  .slide-2 {
+    height: 400px;
+    background-image: url("../img/walk-in-forest.jpg");
+    background-color: rgba(0, 0, 0, 0.3);
+    background-position: center -300px;
+    background-repeat: no-repeat;
+  }
+  .slide {
+    background: white;
+  }
+  .navbar {
+    padding: 8px 16px;
+    background-color: white;
+    box-shadow: 0 0 5px #000;
+    font-family: 'Noto Sans TC', sans-serif;
+    height: 60px;
+  }
+  .navbar .nav-item {
+    font-weight: 400;
+  }
+  .navbar .nav-link {
+    border-bottom: 2px solid white;
+    color: #5c85a7 !important;
+    transition: border-color 0.5s;
+    padding: 8px 15px !important;
+  }
+  .navbar .nav-link:hover {
+    border-color: #5c85a7;
+  }
+  .navbar .navbar-brand {
+    letter-spacing: 5px;
+    color: #5c85a7;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  .navbar .navbar-brand:hover {
+    color: #416079;
+  }
+  .btn-login {
+    background-color: white;
+    color: #5c85a7;
+    transition: border-color 0.5s;
+    border-radius: 0px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  .btn-login:hover {
+    border-bottom: 2px solid #5c85a7;
+  }
+  .search-wrapper {
+    position: relative;
+    background-color: rgba(29, 49, 70, 0.7);
+    padding-bottom: 15px;
+    border-radius: 3px;
+    margin: 130px auto 0px;
+  }
+  .nav .nav-link {
+    color: white;
+    padding-bottom: 10px;
+  }
+  .btn-secondary {
+    border-color: rgba(0, 0, 0, 0.15);
+    color: white;
+    background-color: #8db7d6;
+  }
+  .footer {
+    height: 300px;
+    background-color: #f9f9f9;
+  }
+  .footer-col-share {
+    height: 50px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+  }
+}
+
+
+/*Extra large devices (large desktops, 1200px and up)*/
 
 @media (min-width: 1200px) {
   .jumbotron {

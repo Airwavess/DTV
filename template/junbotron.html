@@ -17,36 +17,32 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-toggleable-md fixed-top">
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded navbar-top">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">吃心絕對</a>
+    <a class="navbar-brand" href="#">D.T.V</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="# ">Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">景點</a>
+          <a class="nav-link" href="#">Link</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">美食</a>
+          <a class="nav-link" href="#">Disabled</a>
         </li>
       </ul>
       <span class="user-login">
-        <button id="fb-login-btn" onclick="fb_login()" class="btn btn-login my-2 my-sm-0">登入</button>  
+        <button id="fb-login-btn" onclick="fb_login()" class="btn btn-login my-2 my-sm-0">Log in</button>  
       </span>
-      <!-- <form class="form-inline my-2 my-lg-0" action="/search_attrations/" method="POST">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-      </form> -->
     </div>
   </nav>
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="jumbotron-main">
-      <div class="col-lg-5 search-wrapper">
+      <div class="col-sm-5 search-wrapper">
         <div>
           <ul class="nav">
             <li class="nav-item">
@@ -67,7 +63,7 @@
           <div>
             <form action="/search_attrations/" method="POST">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for..." required>
+                <input type="text" class="form-control search-input" placeholder="Search for..." required>
                 <span class="input-group-btn">
                 <button class="btn btn-secondary" type="button">Go!</button>
               </span>
@@ -147,10 +143,11 @@
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-  <script src="{% static 'dist/js/bootstrap.min.js'%}"></script>
   <script src="{% static 'js/scrolling parallax.js' %}"></script>
   <script src="{% static 'js/jumbotron.js' %}"></script>
   <script src="{% static 'js/fb-login.js' %}"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
