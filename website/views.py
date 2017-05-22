@@ -1,13 +1,15 @@
+import json
+import urllib.request
+
 from django.template.loader import get_template
 from django.http import HttpResponse, JsonResponse
-import urllib.request
 from bs4 import BeautifulSoup
 from .models import Attractions
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, redirect
 from django.core.serializers import serialize # User for return json date with ajax
-import json
 from django.db.models import Q
+from django.template import RequestContext
 def index(request):
 	template = get_template('index.html')
 
@@ -78,12 +80,10 @@ def load_attrations_data(request):
 
 def search_attrations(request):
 	template = get_template('index.html')
-	if 'keyword' in request.session:
-		keyword = request.session['keyword']
-	else:
-		keyword = request.POST.get('keyword', '')
-		request.session['keyword'] = keyword
-
+	keyword = request.GET.get('keyword', '')
+	request.session['keyword'] = keyword
+	keyword = request.session['keyword']
+	print(keyword)
 	attractions_data = Attractions.objects.filter(Q(at_name__contains=keyword) | 
 		Q(at_description__contains=keyword) | Q(at_category__contains=keyword))
 

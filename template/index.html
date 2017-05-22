@@ -11,7 +11,6 @@
   <!-- <script src="https://unpkg.com/vue/dist/vue.js"></script>  -->
   {% load staticfiles %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="{% static "js/search_attractions.js" %}"></script>
   <link rel="stylesheet" href="{% static 'css/main-page.css'%}">
 </head>
 
@@ -20,14 +19,13 @@
   	<div class="row">
   		<h1 class="col align-self-center"><a href="/" title="Attractions Database">Attractions Database{{ max_index }}</a></h1>
   		<div class="col-lg-6">
-  			{% csrf_token %} 
-  			<form action="/search_attrations/" method="POST">
+  			<form action="/search_attrations/" method="GET">
   				<div class="input-group">
-	    			<input type="text" name="keyword" class="form-control" placeholder="Search for..." value="{{ keyword | default:'' }}" required>
+	    			<input type="text" name="keyword" class="form-control" placeholder="Search for..." value="{{ keyword | default:''}}" required/>
 		     		<span class="input-group-btn">
-		       		<button class="btn btn-secondary" type="submit">Go!</button>
-		      	</span>
-					</div>
+		       			<button class="btn btn-secondary" type="submit">Go!</button>
+		      		</span>
+				</div>
   			</form>
  			</div>
 		</div>
