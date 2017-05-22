@@ -5,6 +5,6 @@ class Attractions(models.Model):
 	at_category = models.TextField()
 	at_description = models.TextField()
 	at_url = models.TextField(null=True)
-
+	at_img_url = models.TextField(null=True)
 	class Meta:
 		ordering = ['at_category']

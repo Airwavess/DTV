@@ -10,6 +10,12 @@ from django.shortcuts import render, redirect
 from django.core.serializers import serialize # User for return json date with ajax
 from django.db.models import Q
 from django.template import RequestContext
+
+def homepage(request):
+	template = get_template('index.html')
+	html = template.render(locals())
+	return HttpResponse(html)
+
 def index(request):
 	template = get_template('index.html')
 
@@ -56,16 +62,17 @@ def scraping(request):
 					location_soup = BeautifulSoup(response, "html.parser")
 
 				attraction_content = str(location_soup.find("p", class_ = "highlight").text)
+				attraction_img_url = str(location_soup.find("a", class_ = "js-photoswipe-item").get("href"))
 
 				if Attractions.objects.filter(at_name = attraction_name).count() == 0:
 					data = Attractions.objects.create(
 								at_name = attraction_name,
 								at_category = attraction_category,
 								at_url = attration_url,
-								at_description = attraction_content
+								at_description = attraction_content,
+								at_img_url = attraction_img_url
 							)
 					data.save()
-				count+=1
 				print(attraction_name)
 			except Exception as e:
 				print(e)
@@ -75,19 +82,16 @@ def scraping(request):
 def load_attrations_data(request):
 	attractions_data = Attractions.objects.all()
 	data = serialize('json', attractions_data)
-	# print(data)
 	return HttpResponse(data, content_type='json')
 
 def search_attrations(request):
-	template = get_template('index.html')
+	template = get_template('search_result.html')
 	keyword = request.GET.get('keyword', '')
-	request.session['keyword'] = keyword
-	keyword = request.session['keyword']
-	print(keyword)
+
 	attractions_data = Attractions.objects.filter(Q(at_name__contains=keyword) | 
 		Q(at_description__contains=keyword) | Q(at_category__contains=keyword))
 
-	paginator = Paginator(attractions_data, 5) # Show 10 content per page
+	paginator = Paginator(attractions_data, 16) # Show 12 content per page
 	page = request.GET.get('page')
 
 	try:
@@ -99,27 +103,22 @@ def search_attrations(request):
 		# If page is out of range (e.g. 9999), deliver last page of results.
 		content = paginator.page(paginator.num_pages)
 
-	index = content.number
+	# index = content.number
 	max_index = len(paginator.page_range)
 
-	if max_index > 8:
-		if index >= max_index - 6:
-			start_index = max_index - 7
-			end_index = max_index
-		else :	
-			start_index = index
-			end_index = index + 7
-	else:
-		start_index = 1
-		end_index = max_index
+	# if max_index > 8:
+	# 	if index >= max_index - 6:
+	# 		start_index = max_index - 7
+	# 		end_index = max_index
+	# 	else :	
+	# 		start_index = index
+	# 		end_index = index + 7
+	# else:
+	# 	start_index = 1
+	# 	end_index = max_index
 	
-	page_range = range(start_index, end_index)
+	# page_range = range(start_index, end_index)
 
-	html = template.render(locals())
-	return HttpResponse(html)
-
-def homepage(request):
-	template = get_template('junbotron.html')
 	html = template.render(locals())
 	return HttpResponse(html)
 

@@ -1,6 +1,6 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 
-@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+/*@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);*/
 @media (max-width: 575px) {
   .jumbotron {
     background-image: url("../img/travel.jpg");

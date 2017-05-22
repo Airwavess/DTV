@@ -2,148 +2,163 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8"> {% load staticfiles%}
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="../../favicon.ico">
-  <title>Jumbotron Template for Bootstrap</title>
-  <link href="{% static 'dist/css/bootstrap.min.css'%}" rel="stylesheet">
-  <link href="{% static 'css/jumbotron.css' %}" rel="stylesheet">
+    <meta charset="utf-8">
+    {% load staticfiles%}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Jumbotron Template for Bootstrap</title>
+    <link href="{% static 'dist/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/jumbotron.css' %}" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded navbar-top">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded navbar-top">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#">D.T.V</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Disabled</a>
-        </li>
-      </ul>
-      <span class="user-login">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Disabled</a>
+            </li>
+        </ul>
+        <span class="user-login">
         <button id="fb-login-btn" onclick="fb_login()" class="btn btn-login my-2 my-sm-0">Log in</button>  
       </span>
     </div>
-  </nav>
-  <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="jumbotron">
+</nav>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
     <div class="jumbotron-main">
-      <div class="col-sm-5 search-wrapper">
-        <div>
-          <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">景點</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">美食</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">美食</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">美食</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <div>
-            <form action="/search_attrations/" method="POST">
-              {% csrf_token %} 
-              <div class="input-group">
-                <input type="text" name="keyword" class="form-control search-input" placeholder="Search for..." required>
-                <span class="input-group-btn">
+        <div class="col-sm-5 search-wrapper">
+            <div>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">景點</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">美食</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">美食</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">美食</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <div>
+                    <form action="/search_attrations/" method="GET">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <input type="hidden" name="page" value="1">
+                            <input type="text" name="keyword" class="form-control search-input"
+                                   placeholder="Search for..." required>
+                            <span class="input-group-btn">
                 <button class="btn btn-secondary" type="button">Go!</button>
               </span>
-              </div>
-            </form>
-          </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="slide">
+</div>
+<div class="slide">
     <div class="container ">
-      <div class="row">
-        <div class="card-deck">
-          <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-block">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="row">
+            <div class="card-deck">
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This card has even longer content than the first to show that equal
+                            height action.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-block">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <hr>
+        <footer>
+            <p>&copy; Company 2017</p>
+        </footer>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Heading</h2>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+                    mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+                    mollis euismod. Donec sed odio dui. </p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
             </div>
-          </div>
-          <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-block">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="col-md-4">
+                <h2>Heading</h2>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+                    mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+                    mollis euismod. Donec sed odio dui. </p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
             </div>
-          </div>
+            <div class="col-md-4">
+                <h2>Heading</h2>
+                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula
+                    porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
+                    ut fermentum massa justo sit amet risus.</p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div>
         </div>
-      </div>
-      <hr>
-      <footer>
-        <p>&copy; Company 2017</p>
-      </footer>
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
     </div>
     <!-- /container -->
-  </div>
-  <div class="slide-2">
+</div>
+<div class="slide-2">
     <div>
     </div>
-  </div>
-  <div class="footer">
+</div>
+<div class="footer">
     <div class="footer-col-share">
     </div>
     <div class="footer-col">
     </div>
-  </div>
-  <!-- Bootstrap core JavaScript
-    ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-  <script src="{% static 'js/scrolling parallax.js' %}"></script>
-  <script src="{% static 'js/jumbotron.js' %}"></script>
-  <script src="{% static 'js/fb-login.js' %}"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</div>
+<!-- Bootstrap core JavaScript
+  ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="{% static 'js/scrolling parallax.js' %}"></script>
+<script src="{% static 'js/jumbotron.js' %}"></script>
+<script src="{% static 'js/fb-login.js' %}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 
 </body>
 

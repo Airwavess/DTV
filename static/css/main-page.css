@@ -1,7 +1,56 @@
 body {
-	margin-top: 20px;
+  font-family: Microsoft JhengHei;
+}
+
+.main-content {
+  margin-top: 40px;
+}
+
+hr {
+  padding: 0px 10px;
 }
 
 a {
-	text-decoration:none !important;
+  text-decoration: none !important;
+}
+
+.img {
+  width: 100%;
+  height: 200px;
+  background-size: 140% auto;
+  background-position: center center;
+  transition: 0.5s;
+}
+
+.img:hover {
+  background-size: 150% auto;
+}
+
+.postbox {
+  margin-top: 30px;
+  padding: 30px auto;
+}
+
+.attraction_name {
+  font-size: 18px;
+  padding-top: 10px;
+  font-weight: bold;
+  line-height: 25px;
+}
+
+.form-control {
+  border-radius: 3px !important;
+}
+
+.input-group {
+  float: right;
+}
+
+.page-list {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.input-group {
+  padding: 0px;
 }

@@ -19,9 +19,8 @@ from website import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index),
-    url(r'^scraping/', views.scraping),
+    url(r'^$', views.homepage),
+    # url(r'^scraping/', views.scraping),
     url(r'^load_attrations_data/', views.load_attrations_data),
-    url(r'^search_attrations/(?P<keyword>\W+)/$', views.search_attrations),
-    url(r'^home/', views.homepage)
+    url(r'^search_attrations/', views.search_attrations),
 ]
