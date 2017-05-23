@@ -22,8 +22,7 @@
         {% for data in content %}
         <div class="postbox col-sm-3">
             <div class="img" style="background-image: url('{{ data.at_img_url }}');"></div>
-            <h6 class="attraction_name"><span class="badge badge-success">{{ data.at_category }}</span> {{ data.at_name
-                }}</h6>
+            <h6 class="attraction_name"><span class="badge badge-success">{{ data.at_category }}</span> {{ data.at_name }}</h6>
         </div>
         {% endfor %}
     </div>
@@ -48,13 +47,14 @@
                 </li>
                 {% endif %}
                 {% for i in content.paginator.page_range %}
-                {% if i == content.number %}
-                <li class="page-item active"><a class="page-link"
+                    {% if i == content.number %}
+                        <li class="page-item active"><a class="page-link"
                                                 href="?page={{ i }}&keyword={{ keyword | default:''}}">{{ i }}</a></li>
-                {% else %}
-                <li class="page-item"><a class="page-link" href="?page={{ i }}&keyword={{ keyword | default:''}}">{{ i
-                    }}</a></li>
-                {% endif%} {% endfor %} {% if content.has_next %}
+                    {% else %}
+                        <li class="page-item"><a class="page-link" href="?page={{ i }}&keyword={{ keyword | default:''}}">{{ i }}</a></li>
+                    {% endif%}
+                {% endfor %}
+                {% if content.has_next %}
                 <li class="page-item">
                     <a class="page-link" href="?page={{ content.next_page_number }}&keyword={{ keyword | default:''}}"
                        aria-label="Next">
