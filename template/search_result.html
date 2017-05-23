@@ -1,68 +1,77 @@
 {% extends 'base.html' %} {% block content %} {% load staticfiles %}
 <link rel="stylesheet" href="{% static 'css/main-page.css'%}">
 <div class="container main-content">
-  <h2 class="">景點列表</h2>
-  <hr>
-  <div class="row">
-  	<h6 class="col align-self-center">共有{{ content.paginator.count }}項結果</h6>
-    <div class="col-sm-6">
-      <form action="/search_attrations/" method="GET">
-        <div class="input-group col-sm-8">
-          <input type="hidden" name="page" value="{{ content.number }}">
-          <input type="text" name="keyword" class="form-control" placeholder="Search for..." value="{{ keyword | default:''}}" required/>
-          <span class="input-group-btn">
+    <h2 class="">景點列表</h2>
+    <hr>
+    <div class="row">
+        <h6 class="col align-self-center">共有{{ content.paginator.count }}項結果</h6>
+        <div class="col-sm-6">
+            <form action="/search_attrations/" method="GET">
+                <div class="input-group col-sm-8">
+                    <input type="hidden" name="page" value="{{ content.number }}">
+                    <input type="text" name="keyword" class="form-control" placeholder="Search for..."
+                           value="{{ keyword | default:''}}" required/>
+                    <span class="input-group-btn">
 		       	<button class="btn btn-danger" type="submit">Go!</button>
 		      </span>
+                </div>
+            </form>
         </div>
-      </form>
     </div>
-  </div>
-  <div class="row">
-    {% for data in content %}
-    <div class="postbox col-sm-3">
-      <div class="img" style="background-image: url('{{ data.at_img_url }}');"></div>
-      <h6 class="attraction_name"><span class="badge badge-success">{{ data.at_category }}</span>  {{ data.at_name }}</h6>
+    <div class="row">
+        {% for data in content %}
+        <div class="postbox col-sm-3">
+            <div class="img" style="background-image: url('{{ data.at_img_url }}');"></div>
+            <h6 class="attraction_name"><span class="badge badge-success">{{ data.at_category }}</span> {{ data.at_name
+                }}</h6>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-  </div>
-  <div class="page-list">
-    <nav aria-label="Page navigation">
-      <ul class="pagination justify-content-center pagination-lg">
-        {% if content.has_previous %}
-        <li class="page-item">
-          <a class="page-link" href="?page={{ content.previous_page_number }}&keyword={{ keyword | default:''}}" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-        {% else %}
-        <li class="page-item disabled">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-        {% endif %} {% for i in content.paginator.page_range %} {% if i == content.number %}
-        <li class="page-item active"><a class="page-link" href="?page={{ i }}&keyword={{ keyword | default:''}}">{{ i }}</a></li>
-        {% else %}
-        <li class="page-item"><a class="page-link" href="?page={{ i }}&keyword={{ keyword | default:''}}">{{ i }}</a></li>
-        {% endif%} {% endfor %} {% if content.has_next %}
-        <li class="page-item">
-          <a class="page-link" href="?page={{ content.next_page_number }}&keyword={{ keyword | default:''}}" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-        {% else %}
-        <li class="page-item disabled">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-        {% endif %}
-      </ul>
-    </nav>
-  </div>
+    <div class="page-list">
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if content.has_previous %}
+                <li class="page-item">
+                    <a class="page-link"
+                       href="?page={{ content.previous_page_number }}&keyword={{ keyword | default:''}}"
+                       aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                {% endif %}
+                {% for i in content.paginator.page_range %}
+                {% if i == content.number %}
+                <li class="page-item active"><a class="page-link"
+                                                href="?page={{ i }}&keyword={{ keyword | default:''}}">{{ i }}</a></li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="?page={{ i }}&keyword={{ keyword | default:''}}">{{ i
+                    }}</a></li>
+                {% endif%} {% endfor %} {% if content.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ content.next_page_number }}&keyword={{ keyword | default:''}}"
+                       aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
 </div>
 {% endblock %}

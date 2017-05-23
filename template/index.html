@@ -1,6 +1,8 @@
 {% extends 'base.html' %} 
 {% load staticfiles %}
 {% block content %}
+<script src="{% static 'js/scrolling parallax.js' %}"></script>
+
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
   <div class="jumbotron-main">
@@ -28,7 +30,7 @@
               <input type="hidden" name="page" value="1">
               <input type="text" name="keyword" class="form-control search-input" placeholder="Search for..." required>
               <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button">Go!</button>
+                <button class="btn btn-secondary" type="submit">Go!</button>
               </span>
             </div>
           </form>
@@ -97,5 +99,3 @@
   </div>
 </div>
 {% endblock %}
-
-<script src="{% static 'js/scrolling parallax.js' %}"></script>
