@@ -23,4 +23,5 @@ urlpatterns = [
     # url(r'^scraping/', views.scraping),
     url(r'^load_attrations_data/', views.load_attrations_data),
     url(r'^search_attrations/', views.search_attrations),
+    url(r'^itinerary/', views.itinerary),
 ]

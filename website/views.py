@@ -106,6 +106,40 @@ def search_attrations(request):
 	# index = content.number
 	max_index = len(paginator.page_range)
 
+	try:
+		addsport = request.POST['add_spot']
+		count = 0 
+
+		try:
+			count = int(request.session['spot_num'])
+			if count == 0:
+				request.session['spot_num'] = 1
+		except:
+			request.session['spot_num'] = 1
+		
+		if count != 0:
+			addreply = 1
+			boo = True
+			spots = []
+
+			for i in range(count):
+				spots.append(request.session['add_spot'+str(i)])
+
+			for j in range(count):
+				if spots[j] == addsport :
+					boo = False
+					addreply = 0
+					break
+
+			if boo == True :
+				request.session['add_spot'+str(count)] = addsport
+				request.session['spot_num'] = count + 1 
+		else:
+			request.session['add_spot'+str(count)] = addsport
+
+	except:
+		pass
+
 	# if max_index > 8:
 	# 	if index >= max_index - 6:
 	# 		start_index = max_index - 7
@@ -122,3 +156,55 @@ def search_attrations(request):
 	html = template.render(locals())
 	return HttpResponse(html)
 
+def itinerary(request):
+	template = get_template('itinerary.html')
+
+	count = 0
+	attractions_data = []
+
+	try:
+		delspot = request.POST['del_spot']
+		count = request.session['spot_num']
+		spots = []
+		delpoint = -1
+
+		for i in range(count):
+			spots.append(str(i))
+			spots.append(request.session['add_spot'+str(i)])  
+
+		print(spots)
+
+		for i in range(count*2):
+			if delspot == spots[i]:
+				delpoint = spots[i-1]
+		print(delpoint)
+
+		del request.session['add_spot'+str(delpoint)]
+		print('add_spot'+str(delpoint))
+
+		for i in range(count):
+			if i > int(delpoint):
+				request.session['add_spot'+str(i-1)] = spots[(i+1)*2-1]
+				print(request.session['add_spot'+str(i-1)])
+
+		request.session['spot_num'] = count -1
+		print('spot'+request.session['spot_num'])
+
+	except:
+		pass
+
+	try:
+		count = request.session['spot_num']
+		spots = []
+
+		for i in range(count):
+			spots.append(request.session['add_spot'+str(i)]) 
+
+		for i in range(count):
+			attractions_data.append (Attractions.objects.get(at_name = spots[i]))
+
+	except:
+		alert = '尚無行程'
+
+	html = template.render(locals())
+	return HttpResponse(html)

@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %} {% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/main-page.css'%}">
+<div class="container main-content">
+    <h2 class="">行程列表</h2>
+    <hr>
+    <div class="row">
+        <h6 class="col align-self-center">共有{{ count }}項行程</h6>
+        <div class="col-sm-6">
+        </div>
+    </div>
+    <div class="row">
+        {% for data in attractions_data %}
+        <div class="postbox col-sm-3">
+            <div class="img" style="background-image: url('{{ data.at_img_url }}');"></div>
+            <h6 class="attraction_name"><span class="badge badge-success">{{ data.at_category }}</span> {{ data.at_name
+                }}</h6>
+            <form method="POST">
+                <button class="btn btn-danger" type="submit" name="del_spot" value="{{ data.at_name }}">刪除行程</button>
+            </form>
+        </div>
+        {% endfor %}
+        {{ alert }}
+    </div>
+</div>
+{% endblock %}
